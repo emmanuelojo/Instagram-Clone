@@ -11,7 +11,8 @@
         <router-link to="/">
           <i class="fa fa-home"></i>
         </router-link>
-        <router-link to="/direct/inbox"
+        <!-- <router-link to="/direct/inbox" -->
+        <router-link to="/"
           ><i class="fa fa-paper-plane-o"> </i>
         </router-link>
         <router-link to="/explore">
