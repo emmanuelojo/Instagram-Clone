@@ -1,32 +1,24 @@
 <template>
   <div id="nav">
     <Navbar />
-    </div>
-  <router-view/>
+  </div>
+  <router-view />
 </template>
 
 <script>
-import Navbar from '@/components/Navbar.vue'
+import Navbar from "@/components/Navbar.vue";
 export default {
-  components: { Navbar }
-}
+  components: { Navbar },
+};
 </script>
 
 <style>
-body{
-  background: #FAFAFA;
+body {
+  background: #fafafa;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-
-/* #nav {
-  padding: 30px;
-} */
 
 #nav a {
   font-weight: bold;
@@ -34,7 +26,6 @@ body{
 }
 
 #nav a.router-link-exact-active {
-  /* color: #42b983; */
   color: #000;
 }
 </style>

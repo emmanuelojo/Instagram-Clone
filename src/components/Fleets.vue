@@ -1,8 +1,6 @@
 <template>
   <div class="hero">
-    <!-- <div class="fleets" v-for="slide in slides" :key="slide.id"> -->
     <div class="fleets">
-      <!-- <i class="fa fa-chevron-left"></i> -->
       <div class="fleet" v-for="slide in slides" :key="slide.id">
         <img :src="slide.image" alt="" />
         <p>{{ slide.name }}</p>
@@ -126,12 +124,12 @@ export default {
   margin-left: auto;
   margin-right: auto;
   overflow-x: hidden;
-  /* overflow-x: auto; */
-  /* overflow-x: scroll; */
+}
+.fleets::-webkit-scrollbar {
+  display: none;
 }
 .fleets i {
   position: absolute;
-  /* right: 80px; */
   right: 43%;
   top: 100px;
   color: #dbdbdb;
@@ -152,8 +150,6 @@ export default {
   cursor: pointer;
 }
 img {
-  /* width: 40px;
-  height: 40px; */
   width: 57px;
   height: 57px;
   border-radius: 50%;

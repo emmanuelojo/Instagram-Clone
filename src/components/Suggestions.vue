@@ -17,7 +17,7 @@
           </div>
         </div>
       </span>
-      
+
       <p class="switcher" @click="switchUser = !switchUser">Switch</p>
     </div>
     <div class="suggestions">
@@ -120,7 +120,7 @@ export default {
   font-weight: bold;
   font-size: 12px;
 }
-.switcher:hover{
+.switcher:hover {
   cursor: pointer;
 }
 .suggestions {
@@ -132,8 +132,7 @@ export default {
   flex-wrap: wrap;
 }
 .header h4 {
-  /* color: #a2a2a2; */
-  color: #8E8E8E;
+  color: #8e8e8e;
   font-size: 13px;
   font-weight: bold;
 }
@@ -183,5 +182,3 @@ export default {
   margin-left: 10px;
 }
 </style>
-
-

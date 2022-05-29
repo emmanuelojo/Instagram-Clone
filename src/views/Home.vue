@@ -22,7 +22,8 @@
                     ></span>
                   </span>
                   <span v-else>
-                    <span @click="post.likes++"> <i class="fa fa-heart-o" style="color: #2c3e50"></i></span
+                    <span @click="post.likes++">
+                      <i class="fa fa-heart-o" style="color: #2c3e50"></i></span
                   ></span>
                 </button>
                 <i class="fa fa-comment-o"></i>
@@ -56,7 +57,8 @@
                   </p>
                   <p v-else class="users-own-comment">
                     <span>{{ post.name }}</span>
-                    {{ post.userComment.substring(0, 60)  }} <span class="moreUserComment"> ... more</span>
+                    {{ post.userComment.substring(0, 60) }}
+                    <span class="moreUserComment"> ... more</span>
                   </p>
                 </div>
               </div>
@@ -71,19 +73,19 @@
                 >
                   <div class="fans">
                     <p>
-                      <span>{{ comment.commentName }}</span> {{ comment.comment }}
+                      <span>{{ comment.commentName }}</span>
+                      {{ comment.comment }}
                     </p>
-                    <button @click="comment.commentLiked = !comment.commentLiked">
+                    <button
+                      @click="comment.commentLiked = !comment.commentLiked"
+                    >
                       <span v-if="comment.commentLiked">
                         <i class="fa fa-heart" style="color: red"></i>
                       </span>
-                      <span v-else><i class="fa fa-heart-o" style="color: #2c3e50"></i></span>
+                      <span v-else
+                        ><i class="fa fa-heart-o" style="color: #2c3e50"></i
+                      ></span>
                     </button>
-                    <!-- <i
-                    class="fa fa-heart"
-                    @click="commentLiked = !commentLiked"
-                    :class="commmentLiked ? 'liked' : 'not-liked'"
-                  ></i> -->
                   </div>
                 </div>
               </div>
@@ -101,7 +103,9 @@
                     <span v-if="comment.commentLiked">
                       <i class="fa fa-heart" style="color: red"></i>
                     </span>
-                    <span v-else><i class="fa fa-heart-o" style="color: #2c3e50"></i></span>
+                    <span v-else
+                      ><i class="fa fa-heart-o" style="color: #2c3e50"></i
+                    ></span>
                   </button>
                   <!-- <i
                     class="fa fa-heart"
@@ -111,11 +115,11 @@
                 </div>
               </div>
             </div>
+
             <div class="time">
               <p>8 HOURS AGO</p>
             </div>
 
-            <!-- <hr> -->
             <div class="fans-comment-box">
               <div class="text-smiley">
                 <i class="fa fa-smile-o"></i>
@@ -155,7 +159,6 @@ export default {
   components: {
     Fleets,
     Suggestions,
-    // HelloWorld
   },
   setup() {
     const posts = ref([
@@ -631,11 +634,8 @@ export default {
         commentName: "randomFan",
       };
       post.comments.push(newComment);
-      // post.comments.push(comment.value);
       comment.value = " ";
     };
-
-    // const commentLiked = ref(false);
 
     const likedPost = (post) => {
       if (isLiked) {
@@ -657,12 +657,11 @@ export default {
 </script>
 
 <style scoped>
-
-#heart{
+#heart {
   color: blue;
   background: red;
 }
-.home{
+.home {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -670,10 +669,14 @@ export default {
   margin-left: auto;
   margin-right: auto;
 }
-.main{
+.home::-webkit-scrollbar,
+.main::-webkit-scrollbar {
+  display: none;
+}
+.main {
   width: 60%;
 }
-.sub{
+.sub {
   width: 35%;
   margin-top: 25px;
   margin-left: -50px;
@@ -725,19 +728,27 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   width: 98%;
-  /* margin: auto; */
-  /* padding-left: ; */
 }
 .interact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
   margin: 5px 0;
 }
 .interact button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   outline: none;
   background: transparent;
+  padding: 0;
 }
+.interact button span {
+  padding-top: 5px;
+}
+
 .interact i {
-  margin: 0 6px;
   font-size: 23px;
 }
 .liked {
@@ -772,7 +783,7 @@ export default {
   display: block;
   text-align: left;
   font-size: 15px;
-  /* display: flex; */
+  margin-bottom: 0;
 }
 .users-own-comment:hover {
   cursor: pointer;
@@ -787,21 +798,23 @@ export default {
 .view-all {
   color: #dbdbdb;
   text-align: left;
-  margin-top: -15px;
   font-size: 15px;
+  margin-bottom: 0;
 }
 .view-all:hover {
   cursor: pointer;
 }
+
 .fans {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 
 .fans p {
   font-size: 15px;
-  margin-top: -12px;
+  margin-bottom: 0;
 }
 .fans span {
   font-weight: bold;
@@ -816,7 +829,7 @@ export default {
   color: #dbdbdb;
   font-size: 10px;
   text-align: left;
-  margin-top: -10px;
+  /* margin-top: -10px; */
 }
 
 .fans-comment-box {
@@ -831,11 +844,8 @@ export default {
 .text-smiley i {
   margin-right: 10px;
   font-size: 25px;
-  /* font-size: 30px; */
   margin-top: auto;
   margin-bottom: auto;
-
-  /* padding-top: 5px; */
 }
 .text-smiley input {
   border: none;
@@ -854,11 +864,10 @@ export default {
   cursor: pointer;
 }
 .postMsg {
-  /* color: blue; */
   color: red;
 }
 @media screen and (max-width: 450px) {
-  .sub{
+  .sub {
     display: none;
   }
   .posts {
@@ -879,81 +888,20 @@ export default {
     height: 45px;
     border-radius: 50%;
     background: linear-gradient(to right, #ff105f, #ffad06);
-    /* margin: 0 12px; */
     padding: 2px;
   }
 }
 @media screen and (max-width: 850px) {
-  .home{
+  .home {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
   }
-  .main{
+  .main {
     width: 100%;
   }
-  .sub{
+  .sub {
     display: none;
   }
 }
 </style>
-
-
-<!--
-<div class="post">
-        <div class="header">
-          <div class="user-details">
-            <img src="@/assets/images/user1.png" alt="" />
-            <h5>userone</h5>
-          </div>
-          <i class="fa fa-list"></i>
-        </div>
-        <img src="@/assets/images/dubai.jpg" alt="" />
-        <div class="footer">
-          <div class="btns">
-            <div class="interact">
-              <i class="fa fa-heart" :class="liked" @click="post.likes ++ "></i>
-              <i class="fa fa-comment"></i>
-              <i class="fa fa-paper-plane"></i>
-            </div>
-            <i class="fa fa-bookmark"></i>
-          </div>
-          <div class="comments">
-            <div class="likes">
-              <img src="@/assets/images/user3.png" alt="" />
-              <p>Liked by <span> user5 </span> and <span> 123 others</span></p>
-            </div>
-
-            <p class="users-own-comment">
-              <span>userone</span> Lorem ipsum dolor sit amet consectetur,
-              adipisicing elit. Corporis inventore architecto unde, doloremque
-              iusto officia nulla commodi distinctio, accusamus vel dolorem
-              recusandae fuga vero, minus odio? Rem, officiis rerum! Placeat.
-            </p>
-            <p class="view-all">View all 217 comments</p>
-            <div class="commenters">
-              <div class="fans">
-                <p><span>user10</span> Great work</p>
-                <i class="fa fa-heart"></i>
-              </div>
-              <div class="fans">
-                <p><span>usertwenty</span> Keep it up</p>
-                <i class="fa fa-heart"></i>
-              </div>
-            </div>
-          </div>
-          <div class="time">
-            <p>8 HOURS AGO</p>
-          </div>
-
-          <hr>
-          <div class="fans-comment-box">
-            <div class="text-smiley">
-              <i class="fa fa-user"></i>
-              <input type="text" v-model="comment" placeholder="Add a comment..." >
-            </div>
-            <p @click="pushComment()">Post</p>
-          </div>
-        </div>
-
-        -->
