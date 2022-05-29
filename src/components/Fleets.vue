@@ -160,6 +160,7 @@ img {
 .fleet p {
   font-size: 12px;
   margin-top: 5px;
+  text-align: center;
 }
 
 @media screen and (max-width: 450px) {
