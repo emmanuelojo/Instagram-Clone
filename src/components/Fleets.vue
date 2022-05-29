@@ -123,7 +123,8 @@ export default {
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
+  transition: all 0.5s ease;
 }
 .fleets::-webkit-scrollbar {
   display: none;
