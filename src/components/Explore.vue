@@ -32,7 +32,7 @@ export default {
       {
         id: 3,
         image: require("@/assets/images/blackWidow.jpg"),
-        likes: 56778,
+        likes: 5678,
         comments: 843,
       },
       {
@@ -56,31 +56,31 @@ export default {
       {
         id: 7,
         image: require("@/assets/images/captainMarvel.jpg"),
-        likes: 59877,
+        likes: 5987,
         comments: 423,
       },
       {
         id: 8,
         image: require("@/assets/images/london.jpg"),
-        likes: 64589,
+        likes: 6489,
         comments: 723,
       },
       {
         id: 9,
         image: require("@/assets/images/ironMan.jpg"),
-        likes: 897567,
+        likes: 8567,
         comments: 823,
       },
       {
         id: 10,
         image: require("@/assets/images/maldives.jpg"),
-        likes: 509867,
+        likes: 5867,
         comments: 203,
       },
       {
         id: 11,
         image: require("@/assets/images/thor.jpg"),
-        likes: 512367,
+        likes: 5367,
         comments: 2983,
       },
       {
@@ -92,19 +92,19 @@ export default {
       {
         id: 13,
         image: require("@/assets/images/wonderWoman.jpg"),
-        likes: 67887567,
+        likes: 7567,
         comments: 2783,
       },
       {
         id: 14,
         image: require("@/assets/images/maimi.jpg"),
-        likes: 6787567,
+        likes: 6567,
         comments: 278,
       },
       {
         id: 15,
         image: require("@/assets/images/superman.jpg"),
-        likes: 67887,
+        likes: 6887,
         comments: 783,
       },
     ]);
@@ -117,17 +117,19 @@ export default {
 <style scoped>
 .main {
   width: 80%;
-  margin: auto;
+  margin-inline: auto;
 }
 .explore {
   margin-bottom: 50px;
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
 }
 .items {
   position: relative;
-  display: inline-flex;
-  justify-items: left;
-  align-items: left;
   transition: 0.5s ease-in-out;
+  width: 324px;
+  height: 324px;
 }
 img {
   width: 300px;
@@ -141,57 +143,83 @@ img:hover {
   opacity: 0.8;
 }
 .items:hover .likes {
-  position: absolute;
   display: flex;
-  margin-top: 150px;
-  margin-left: 80px;
-  color: #fff;
-  cursor: pointer;
-  z-index: 11111;
-  opacity: 1;
-  /* transition: 1s ease-in-out; */
 }
 
 .likes {
-  /* display: flex;
-  visibility: hidden; */
   display: none;
+  width: 155px;
+  height: 44px;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -22px;
+  margin-left: -77.5px;
+  color: #fff;
+  cursor: pointer;
 }
-.likes p {
-  margin-left: 20px;
+
+@media screen and (min-width: 768px) {
+  .main {
+    width: 100%;
+    margin: auto;
+  }
+
+  .explore {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    place-content: center;
+    gap: 20px;
+  }
+
+  .items {
+    margin: 10px auto;
+  }
 }
+
 @media screen and (max-width: 450px) {
   .main {
     width: 100%;
     margin: auto;
   }
   .explore {
-    columns: 3;
-    column-gap: 2px;
-    /* 
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    margin-left: auto;
-    margin-right: auto; */
+    /* display: grid;
+    grid-template-columns: repeat(3, auto);
+    place-content: center;
+    gap: 2px; */
   }
   .items {
-    margin: -5px;
-    position: inherit;
-    display: inline-flex;
-    justify-items: left;
-    align-items: left;
-    transition: 0.5s ease-in-out;
+    width: 100px;
+    height: 100px;
   }
+  /* .items:nth-child(3),
+  .items:nth-child(5) {
+    width: 100px;
+    height: 200px;
+  } */
   img {
-    width: 150px;
-    height: 150px;
-    margin: 0;
+    width: 100px;
+    height: 100px;
   }
+
   .items:hover .likes {
     display: grid;
-    margin-top: 50px;
-    margin-left: 10px;
+  }
+  .likes {
+    display: none;
+    width: 100px;
+    height: 44px;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -22px;
+    margin-left: -35px;
+    color: #fff;
+    cursor: pointer;
   }
 }
 </style>
